@@ -5,11 +5,11 @@ import { CONTAINER_SIZE } from '../../constants/constants';
 import { FormProps } from '../../types/forms-props-type';
 
 type RegisterPageProps = {
-  signInForm: FormProps,
+  registerForm: FormProps,
 }
 
-function SignInPage({signInForm}: RegisterPageProps): JSX.Element {
-  const {title, formArr, submitBtn, onSubmit, redirect} = signInForm;
+function RegisterPage({registerForm}: RegisterPageProps): JSX.Element {
+  const {title, formArr, submitBtn, onSubmit, redirect} = registerForm;
   const onSubmitHandler = () => {}
 
   return (
@@ -25,4 +25,4 @@ function SignInPage({signInForm}: RegisterPageProps): JSX.Element {
   );
 }
 
-export default SignInPage;
+export default RegisterPage;
