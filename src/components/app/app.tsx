@@ -7,10 +7,17 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../styles/theme';
 import { GlobalStyle } from '../../styles/global-styles';
 import SignInPage from '../../page/sign-in-page/sign-in-page';
+import RegisterPage from '../../page/register-page/register-page';
 import MyAccountPage from '../../page/my-account-page/my-account-page';
 import NotFoundPage from '../../page/not-found-page/not-found-page';
+import { FormProps } from '../../types/forms-props-type';
 
-function App(): JSX.Element {
+type AppProps = {
+  signInForm: FormProps,
+  registerForm: FormProps,
+}
+
+function App({signInForm, registerForm}: AppProps): JSX.Element {
   const themeStyle = lightTheme;
 
   return (
@@ -21,7 +28,12 @@ function App(): JSX.Element {
           <Routes>
             <Route
               path={AppRoute.Root}
-              element={<SignInPage />}
+              element={<SignInPage signInForm={signInForm}/>}
+            />
+
+            <Route
+              path={AppRoute.Register}
+              element={<RegisterPage registerForm={registerForm}/>}
             />
 
             <Route
