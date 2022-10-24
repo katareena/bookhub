@@ -9,7 +9,7 @@ import {
   SRedirect,
   SRedirectLabel,
   SRedirectLink
-} from './form-styles';
+} from './form.styles';
 import { FormDataType } from '../../types/form-data-type';
 import { FormProps } from '../../types/forms-props-type';
 
@@ -19,7 +19,7 @@ const prepareForm = (formArr: FormDataType[]) => {
   }, {});
 }
 
-const Form = ({ title, formArr, submitBtn, onSubmit, redirect }: FormProps): JSX.Element => {
+function Form ({ title, formArr, submitBtn, onSubmit, redirect }: FormProps): JSX.Element {
   const initalForm = prepareForm(formArr);
   const [form, setForm] = useState(initalForm);
 
@@ -63,30 +63,5 @@ const Form = ({ title, formArr, submitBtn, onSubmit, redirect }: FormProps): JSX
     </SForm>
   );
 };
-
-// Form.defaultProps = {
-//   title: 'Sign In',
-//   formArr: [
-//     {
-//       label: 'Email',
-//       name: 'email',
-//       type: 'text',
-//     },
-//     {
-//       label: 'Password',
-//       name: 'password',
-//       type: 'password',
-//     }
-//   ],
-//   submitBtn: 'Sign In',
-//   onSubmit: (form: FormDataType) => console.log(form),
-//   redirect: {
-//     label: 'Don\'t have an account?',
-//     link: {
-//       label: 'Register',
-//       to: '/register',
-//     }
-//   }
-// }
 
 export default Form;

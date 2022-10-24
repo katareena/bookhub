@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
+import Sidebar from '../../components/sidebar/sidebar';
+import { SLayout, SMain } from './my-account-page.styles';
 
-function MyAccountPage(): JSX.Element {
+function MyAccountPage({children}: PropsWithChildren): JSX.Element {
   return (
-    <div></div>
+    <SLayout>
+      <Sidebar />
+      <SMain>{children}</SMain>
+    </SLayout>
   );
 }
 

@@ -1,4 +1,4 @@
-import { FormDataType } from '../types/form-data-type';
+import { FormDataType } from './form-data-type';
 
 export type FormProps = {
   title: string,

@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
     background: ${({ theme }) => theme.bg};
     color: ${({ theme }) => theme.text};
     font-family: 'Roboto', monospace;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
     padding: 1rem;
   }
   input {

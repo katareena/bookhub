@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import browserHistory from '../../browser-history';
 import HistoryRouter from '../history-route/history-route';
 import { AppRoute } from '../../constants/constants';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from '../../styles/theme';
-import { GlobalStyle } from '../../styles/global-styles';
+import { lightTheme, darkTheme } from '../../styles/theme';
+import { GlobalStyle } from '../../styles/global';
+import { ThemeContextType } from '../../types/theme-context-type';
 import SignInPage from '../../page/sign-in-page/sign-in-page';
 import RegisterPage from '../../page/register-page/register-page';
 import MyAccountPage from '../../page/my-account-page/my-account-page';
@@ -17,11 +18,18 @@ type AppProps = {
   registerForm: FormProps,
 }
 
+export const ThemeContext = React.createContext<ThemeContextType>({
+  theme: null,
+  setTheme: (theme) => {theme},
+});
+
 function App({signInForm, registerForm}: AppProps): JSX.Element {
-  const themeStyle = lightTheme;
+  const [theme, setTheme] = useState('light');
+  const themeStyle = theme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <ThemeProvider theme={themeStyle}>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <ThemeProvider theme={themeStyle}>
         <GlobalStyle />
 
         <HistoryRouter history={browserHistory}>
@@ -47,8 +55,8 @@ function App({signInForm, registerForm}: AppProps): JSX.Element {
             />
           </Routes>
         </HistoryRouter>
-
-    </ThemeProvider>
+      </ThemeProvider>
+    </ThemeContext.Provider>
   );
 }
 
