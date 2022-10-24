@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from '../../components/form/form';
-import { SFixedContainer } from '../../components/containers/containers-styles';
+import { SFixedContainer } from '../../components/containers/containers.styles';
 import { CONTAINER_SIZE } from '../../constants/constants';
 import { FormProps } from '../../types/forms-props-type';
 
