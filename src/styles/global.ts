@@ -18,5 +18,31 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
   input {
     -webkit-border-radius: 0; // removing the rounding on input (iOS)
     border-radius: 0;
+    font-family: 'Roboto', monospace;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+      border-color: ${({theme}) => theme.hover};
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  button {
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    /* &:hover,
+    &:focus {
+      color: ${({theme}) => theme.hover};
+    } */
+  }
+  p {
+    margin: 0;
   }
 `;

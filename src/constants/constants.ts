@@ -4,6 +4,7 @@ export enum AppRoute {
   Root = '/',
   Register = '/register',
   MyAccount = '/myaccount',
+  NoFoundPage = '*',
 }
 
 export enum APIRoute {

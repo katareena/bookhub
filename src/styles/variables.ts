@@ -1,5 +1,13 @@
 import { css } from 'styled-components';
 
+export const v = {
+  smSpacing: `8px`,
+  mdSpacing: `16px`,
+  lgSpacing: `32px`,
+  xlSpacing: `48px`,
+  xxlSpacing: `64px`,
+};
+
 export const form = {
   headerHeight: '60px',
   smSpacing: `8px`,

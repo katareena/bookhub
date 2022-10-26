@@ -50,7 +50,7 @@ function App({signInForm, registerForm}: AppProps): JSX.Element {
             />
 
             <Route
-              path="*"
+              path={AppRoute.NoFoundPage}
               element={<NotFoundPage />}
             />
           </Routes>
