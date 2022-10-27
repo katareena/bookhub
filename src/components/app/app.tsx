@@ -10,6 +10,7 @@ import { ThemeContextType } from '../../types/theme-context-type';
 import SignInPage from '../../page/sign-in-page/sign-in-page';
 import RegisterPage from '../../page/register-page/register-page';
 import MyAccountPage from '../../page/my-account-page/my-account-page';
+import Search from '../search/search';
 import NotFoundPage from '../../page/not-found-page/not-found-page';
 import { FormProps } from '../../types/forms-props-type';
 
@@ -47,7 +48,17 @@ function App({signInForm, registerForm}: AppProps): JSX.Element {
             <Route
               path={AppRoute.MyAccount}
               element={<MyAccountPage />}
-            />
+            >
+              <Route index element={
+                <>
+                  <div>home</div>
+                </>
+                }
+              />
+
+              <Route path={`${AppRoute.MyAccount}/search`} element={<Search />}
+              />
+            </Route>
 
             <Route
               path={AppRoute.NoFoundPage}

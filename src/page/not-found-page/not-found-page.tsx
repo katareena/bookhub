@@ -5,7 +5,7 @@ function NotFoundPage(): JSX.Element {
   return (
     <>
       <h1>404. Page not found</h1>
-      <SLink to='/'>Return to the home page</SLink>
+      <SLink to='/myaccount'>Return to the home page</SLink>
     </>
   );
 }

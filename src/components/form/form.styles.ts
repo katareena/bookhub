@@ -4,6 +4,7 @@ import { btnReset, form } from '../../styles/variables';
 
 export const SForm = styled.form`
   width: 100%;
+  margin: 15px;
   padding: ${form.mdSpacing};
   background-color: ${({theme}) => theme.bg2};
   border-radius: ${form.borderRadius};

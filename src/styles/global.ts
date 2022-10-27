@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
     color: ${({ theme }) => theme.text};
     font-family: 'Roboto', monospace;
     letter-spacing: 0.6px;
-    padding: 1rem;
   }
   input {
     -webkit-border-radius: 0; // removing the rounding on input (iOS)
@@ -36,11 +35,6 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
   button {
     transition: all 0.2s ease;
     cursor: pointer;
-
-    /* &:hover,
-    &:focus {
-      color: ${({theme}) => theme.hover};
-    } */
   }
   p {
     margin: 0;

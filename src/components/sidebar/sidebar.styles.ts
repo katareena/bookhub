@@ -7,14 +7,31 @@ export const SSidebar = styled.div<{isOpen: boolean}>`
   background: ${({ theme }) => theme.bg};
   height: 100vh;
   padding: ${sideBar.lgSpacing};
+  padding-top: 0px;
   position: relative;
+  transition-property: width;
+  box-shadow: 0 0 4px ${({ theme }) => theme.bg3}, 0 0 7px ${({ theme }) => theme.bg};
+
+  animation-name: menuOpenMobile;
+  animation-duration: 3s;
+
+  @keyframes menuOpenTablet {
+  from {
+    width: auto;
+  }
+  to {
+    width: ${({ isOpen }) => (!isOpen ? `auto` : sideBar.sidebarWidth)};
+  }
+}
 `;
 
 export const SSidebarButton = styled.button<{isOpen: boolean}>`
   ${btnReset};
   position: absolute;
-  top: ${sideBar.xxlSpacing};
-  right: ${({ isOpen }) => (isOpen ? `-16px` : `-40px`)};
+  top: 8px;
+  right: -16px;
+  /* top: ${sideBar.xxlSpacing}; */
+  /* right: ${({ isOpen }) => (isOpen ? `-16px` : `-40px`)}; */
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -25,44 +42,7 @@ export const SSidebarButton = styled.button<{isOpen: boolean}>`
   justify-content: center;
   cursor: pointer;
   transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
-`;
-
-export const SLogo = styled.div`
-  width: 52px;
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  cursor: pointer;
-  margin-bottom: ${sideBar.lgSpacing};
-`;
-
-export const SSearch = styled.div`
-  background: ${({ theme }) => theme.bgAlpha};
-  border: 1px solid ${({ theme }) => theme.bg3};
-  border-radius: ${sideBar.borderRadius};
-  input {
-    padding: 0 ${sideBar.smSpacing};
-    font-family: inherit;
-    letter-spacing: inherit;
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-    border: none;
-    color: inherit;
-    background: transparent;
-  }
-  display: flex;
-`;
-
-export const SSearchIcon = styled.button`
-  ${btnReset};
-  padding: calc(${sideBar.mdSpacing} - 2px) ${sideBar.mdSpacing};
-  display: flex;
-  cursor: pointer;
-  svg {
-    font-size: 20px;
-  }
+  /* transition: all 1s ease; */
 `;
 
 export const SDivider = styled.div`
