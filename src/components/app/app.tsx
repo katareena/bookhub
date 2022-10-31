@@ -7,12 +7,14 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../../styles/theme';
 import { GlobalStyle } from '../../styles/global';
 import { ThemeContextType } from '../../types/theme-context-type';
+import PrivateRoute from '../private-route/private-route';
 import SignInPage from '../../page/sign-in-page/sign-in-page';
 import RegisterPage from '../../page/register-page/register-page';
 import MyAccountPage from '../../page/my-account-page/my-account-page';
 import Search from '../search/search';
 import NotFoundPage from '../../page/not-found-page/not-found-page';
 import { FormProps } from '../../types/forms-props-type';
+import { AuthorizationStatus } from '../../constants/constants';
 
 type AppProps = {
   signInForm: FormProps,
@@ -47,7 +49,11 @@ function App({signInForm, registerForm}: AppProps): JSX.Element {
 
             <Route
               path={AppRoute.MyAccount}
-              element={<MyAccountPage />}
+              element={
+                <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                  <MyAccountPage />
+                </PrivateRoute>
+              }
             >
               <Route index element={
                 <>
