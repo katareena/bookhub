@@ -6,9 +6,6 @@ import {
     SLinkIcon,
     SLinkLabel,
     SLinkNotification,
-    SLogo,
-    SSearch,
-    SSearchIcon,
     SSidebar,
     SSidebarButton,
     STheme,
@@ -24,6 +21,9 @@ import {
     AiOutlineSearch,
     AiOutlineSetting,
 } from 'react-icons/ai';
+import {
+  MdOutlineFavoriteBorder,
+} from 'react-icons/md';
 import { MdLogout, MdOutlineAnalytics } from 'react-icons/md';
 import { BsPeople } from 'react-icons/bs';
 import { ThemeContext } from './../app/app';
@@ -39,7 +39,6 @@ function Sidebar(): JSX.Element {
   const searchClickHandler = () => {
     if (!sidebarOpen) {
       setSidebarOpen(true);
-      searchRef.current?.focus();
     } else {
       // search functionality
     }
@@ -48,30 +47,10 @@ function Sidebar(): JSX.Element {
   return (
     <SSidebar isOpen={sidebarOpen}>
       <>
-        <SSidebarButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((p) => !p)}>
+        <SSidebarButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((value) => !value)}>
           <AiOutlineLeft />
         </SSidebarButton>
       </>
-
-      <SLogo>
-        <img src='../../../public/ducky.png' alt='logo' />
-      </SLogo>
-
-      <SSearch
-        onClick={searchClickHandler}
-        style={!sidebarOpen ? { width: `fit-content` } : {}}
-      >
-        <SSearchIcon>
-          {/* <AiOutlineSearch /> */}
-        </SSearchIcon>
-        <input
-          ref={searchRef}
-          placeholder='Search'
-          style={!sidebarOpen ? { width: 0, padding: 0 } : {}}
-        />
-      </SSearch>
-
-      <SDivider />
 
       {linksArray.map(({ icon, label, notification, to }) => (
         <SLinkContainer key={label} isActive={pathname === to}>
@@ -122,6 +101,18 @@ const linksArray = [
     icon: <AiOutlineHome />,
     to: '/myaccount',
     notification: 0,
+  },
+  {
+    label: 'Search',
+    icon: <AiOutlineSearch />,
+    to: '/myaccount/search',
+    notification: 0,
+  },
+  {
+    label: 'Favorites',
+    icon: <MdOutlineFavoriteBorder />,
+    to: '/myaccount/favorite',
+    notification: 5,
   },
   {
     label: 'Statistics',

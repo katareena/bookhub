@@ -38,6 +38,11 @@ export const SInput = styled.input`
   font-size: 14px;
   border-radius: ${form.borderRadius};
   outline: none;
+
+  &:hover,
+  &:focus {
+    border-color: ${({theme}) => theme.hover};
+  }
 `;
 
 export const SButton = styled.button`
@@ -50,7 +55,13 @@ export const SButton = styled.button`
   border-radius: ${form.borderRadius};
   background-color: ${({theme}) => theme.bgSecondary};
   color: ${({theme}) => theme.textSecondary};
+  transition: all 0.2s ease;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: ${({theme}) => theme.hover};
+  }
 `;
 
 export const SRedirect = styled.div`
@@ -68,4 +79,11 @@ export const SRedirectLabel = styled.span`
 
 export const SRedirectLink = styled(Link)`
   color: ${({theme}) => theme.primary};
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: ${({theme}) => theme.hover};
+    outline: none;
+  }
 `;

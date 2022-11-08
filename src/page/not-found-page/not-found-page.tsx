@@ -1,11 +1,12 @@
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { NotFoundBox, NotFoundTitle, NotFoundLink } from './not-found-page.styles';
 
 function NotFoundPage(): JSX.Element {
   return (
-    <div className="catalog">
-      <h1>404. Page not found</h1>
-      <Link to="/">Вернуться на главную</Link>
-    </div>
+    <NotFoundBox>
+      <NotFoundTitle>404. Page not found</NotFoundTitle>
+      <NotFoundLink to='/'>Return to the home page</NotFoundLink>
+    </NotFoundBox>
   );
 }
 

@@ -21,6 +21,8 @@ export const lightTheme = {
   text: 'rgb(45, 45, 45)',
   textSecondary: 'rgb(247, 247, 247)',
   primary: 'rgb(52, 131, 235)',
+  hover: 'rgb(255, 165, 0)',
+  error: 'rgb(200, 117, 117)',
 };
 export const darkTheme = {
   bg: 'rgb(15, 15, 15)',
@@ -30,4 +32,6 @@ export const darkTheme = {
   bgSecondary: 'rgba(250, 250, 250, 0.3)',
   text: 'rgb(210, 210, 210)',
   primary: 'rgb(52, 131, 235)',
+  hover: 'rgb(255, 165, 0)',
+  error: 'rgb(200, 117, 117)',
 };
