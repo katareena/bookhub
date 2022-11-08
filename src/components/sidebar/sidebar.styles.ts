@@ -10,7 +10,8 @@ export const SSidebar = styled.div<{isOpen: boolean}>`
   padding-top: 0px;
   position: relative;
   transition-property: width;
-  box-shadow: 0 0 4px ${({ theme }) => theme.bg3}, 0 0 7px ${({ theme }) => theme.bg};
+  /* box-shadow: 0 0 4px ${({ theme }) => theme.bg3}, 0 0 7px ${({ theme }) => theme.bg}; */
+  box-shadow: 5px 0 5px -5px ${({ theme }) => theme.bg3};
 
   animation-name: menuOpenMobile;
   animation-duration: 3s;
@@ -28,9 +29,9 @@ export const SSidebar = styled.div<{isOpen: boolean}>`
 export const SSidebarButton = styled.button<{isOpen: boolean}>`
   ${btnReset};
   position: absolute;
-  top: 8px;
+  /* top: 6px; */
   right: -16px;
-  /* top: ${sideBar.xxlSpacing}; */
+  top: ${sideBar.xxlSpacing};
   /* right: ${({ isOpen }) => (isOpen ? `-16px` : `-40px`)}; */
   width: 32px;
   height: 32px;
@@ -43,6 +44,7 @@ export const SSidebarButton = styled.button<{isOpen: boolean}>`
   cursor: pointer;
   transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
   /* transition: all 1s ease; */
+  z-index: 2;
 `;
 
 export const SDivider = styled.div`

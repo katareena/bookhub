@@ -38,6 +38,7 @@ function Form ({ title, formArr, submitBtn, onSubmit, redirect }: FormProps): JS
       onSubmit={onSubmitHandler}
       >
       <SFormTitle>{title}</SFormTitle>
+
       {formArr.map(({label, name, type}, index) => (
         <SFormControl key={name+index}>
           <SLabel htmlFor={name}>{label}</SLabel>

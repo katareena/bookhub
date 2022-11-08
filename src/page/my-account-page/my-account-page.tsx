@@ -1,24 +1,21 @@
 import React, { PropsWithChildren } from 'react';
 import { Outlet } from 'react-router-dom';
+import Header from '../../components/header/header';
 import Sidebar from '../../components/sidebar/sidebar';
-import { SLayout, SHeader, SLogo, SUser, SMain } from './my-account-page.styles';
+import { SideLayout, SideMain } from './my-account-page.styles';
 import { logoPic } from '../../assets/logo';
 
 function MyAccountPage({children}: PropsWithChildren): JSX.Element {
   return (
     <>
-      <SHeader>
-        <SLogo to='/myaccount'>
-          <img src={logoPic} alt='logo'/>
-        </SLogo>
-        <SUser>Name Surname</SUser>
-      </SHeader>
-      <SLayout>
+      <Header />
+
+      <SideLayout>
         <Sidebar />
-        <SMain>
+        <SideMain>
           <Outlet />
-        </SMain>
-      </SLayout>
+        </SideMain>
+      </SideLayout>
     </>
   );
 }

@@ -70,3 +70,7 @@ export const b = {
   md: `(min-width: ${s.md})`,
   sm: `(min-width: ${s.sm})`,
 };
+
+export const stable = {
+  bg1: 'rgb(30, 30, 30)',
+}

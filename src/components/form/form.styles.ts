@@ -4,7 +4,6 @@ import { btnReset, form } from '../../styles/variables';
 
 export const SForm = styled.form`
   width: 100%;
-  margin: 15px;
   padding: ${form.mdSpacing};
   background-color: ${({theme}) => theme.bg2};
   border-radius: ${form.borderRadius};
@@ -39,6 +38,11 @@ export const SInput = styled.input`
   font-size: 14px;
   border-radius: ${form.borderRadius};
   outline: none;
+
+  &:hover,
+  &:focus {
+    border-color: ${({theme}) => theme.hover};
+  }
 `;
 
 export const SButton = styled.button`
