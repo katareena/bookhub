@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Personal Account App 👋</h1>
+<h1 align="center">Welcome to BookHub 👋</h1>
 
 ### 🏠 [Homepage](https://github.com/katareena/account)
 
