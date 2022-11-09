@@ -1,4 +1,4 @@
-<h1 align="left">Welcome to BookHub 👋</h1>
+<h1 align="left">Welcome to BookHub App👋</h1>
 
 ### 🏠 [Homepage](https://github.com/katareena/account)
 
