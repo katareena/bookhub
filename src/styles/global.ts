@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
   *::before {
     box-sizing: border-box;
     margin: 0;
+  }
+  html {
     font-size: 10px;
   }
   body {

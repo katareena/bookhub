@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.header`
   padding: 1.8rem 0;
-  box-shadow: 0px 10px 15px -3px ${({ theme }) => theme.bg3}, 0px 4px 6px -2px ${({ theme }) => theme.bg};
+  box-shadow: 0px 7px 10px -5px ${({ theme }) => theme.bg3}, 0px 4px 6px -2px ${({ theme }) => theme.bg};
   z-index: 1;
   position: relative;
 `;

@@ -5,6 +5,7 @@ export enum AppRoute {
   Books = 'books',
   About = 'about',
   Account = '/account',
+  Favorites = '/account/favorite',
   SignIn = '/signin',
   Register = '/register',
   NoFoundPage = '*',

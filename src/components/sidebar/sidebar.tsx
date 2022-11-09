@@ -13,48 +13,33 @@ import {
     SThemeToggler,
     SToggleThumb,
 } from './sidebar.styles';
-// import { logoSVG } from '../../assets';
 import {
-    AiOutlineApartment,
     AiOutlineHome,
     AiOutlineLeft,
-    AiOutlineSearch,
     AiOutlineSetting,
 } from 'react-icons/ai';
-import {
-  MdOutlineFavoriteBorder,
-} from 'react-icons/md';
+import { MdOutlineFavoriteBorder, MdOutlineNotifications } from 'react-icons/md';
+import { BiMessageDetail } from 'react-icons/bi';
 import { MdLogout, MdOutlineAnalytics } from 'react-icons/md';
-import { BsPeople } from 'react-icons/bs';
 import { ThemeContext } from './../app/app';
 import { ThemeContextType } from '../../types/theme-context-type'
 import { useLocation } from 'react-router-dom';
+import { AppRoute } from '../../constants/constants';
 
 function Sidebar(): JSX.Element {
-  const searchRef = useRef<HTMLInputElement | null>(null);
-  const {theme, setTheme} = useContext<ThemeContextType>(ThemeContext);
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+  const { theme, setTheme } = useContext<ThemeContextType>(ThemeContext);
+  const [ sidebarOpen, setSidebarOpen ] = useState<boolean>(false);
   const { pathname } = useLocation();
-
-  const searchClickHandler = () => {
-    if (!sidebarOpen) {
-      setSidebarOpen(true);
-    } else {
-      // search functionality
-    }
-  };
 
   return (
     <SSidebar isOpen={sidebarOpen}>
-      <>
-        <SSidebarButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((value) => !value)}>
-          <AiOutlineLeft />
-        </SSidebarButton>
-      </>
+      <SSidebarButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((value) => !value)}>
+        <AiOutlineLeft />
+      </SSidebarButton>
 
       {linksArray.map(({ icon, label, notification, to }) => (
         <SLinkContainer key={label} isActive={pathname === to}>
-          <SLink to={to} style={!sidebarOpen ? { width: `fit-content` } : {}}>
+          <SLink to={to} isOpen={sidebarOpen} aria-label={label}>
             <SLinkIcon>{icon}</SLinkIcon>
               {sidebarOpen && (
                 <>
@@ -73,7 +58,7 @@ function Sidebar(): JSX.Element {
 
       {secondaryLinksArray.map(({ icon, label, to }) => (
         <SLinkContainer key={label} isActive={pathname === to}>
-          <SLink to={to} style={!sidebarOpen ? { width: `fit-content` } : {}}>
+          <SLink to={to} isOpen={sidebarOpen}>
             <SLinkIcon>{icon}</SLinkIcon>
             {sidebarOpen && <SLinkLabel>{label}</SLinkLabel>}
           </SLink>
@@ -87,6 +72,7 @@ function Sidebar(): JSX.Element {
         <SThemeToggler
           isActive={theme === 'dark'}
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          aria-label='switch the app`s color theme'
         >
           <SToggleThumb style={theme === 'dark' ? { right: '1px' } : {}} />
         </SThemeToggler>
@@ -97,39 +83,33 @@ function Sidebar(): JSX.Element {
 
 const linksArray = [
   {
-    label: 'Home',
+    label: 'My Account',
     icon: <AiOutlineHome />,
-    to: '/myaccount',
-    notification: 0,
-  },
-  {
-    label: 'Search',
-    icon: <AiOutlineSearch />,
-    to: '/myaccount/search',
+    to: AppRoute.Account,
     notification: 0,
   },
   {
     label: 'Favorites',
     icon: <MdOutlineFavoriteBorder />,
-    to: '/myaccount/favorite',
+    to: AppRoute.Favorites,
     notification: 5,
   },
   {
-    label: 'Statistics',
+    label: 'Orders',
     icon: <MdOutlineAnalytics />,
-    to: '/statistics',
+    to: '/orders',
     notification: 3,
   },
   {
-    label: 'Customers',
-    icon: <BsPeople />,
-    to: '/customers',
+    label: 'My Reviews',
+    icon: <BiMessageDetail />,
+    to: '/reviews',
     notification: 0,
   },
   {
-    label: 'Diagrams',
-    icon: <AiOutlineApartment />,
-    to: '/diagrams',
+    label: 'Notifications',
+    icon: <MdOutlineNotifications />,
+    to: '/notifications',
     notification: 1,
   },
 ];

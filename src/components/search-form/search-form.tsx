@@ -17,7 +17,7 @@ function SearchForm(): JSX.Element {
       <SearchFormBox onSubmit={handleSubmit}>
         <SearchInner>
           <SearchInput type='text' placeholder='The Lost World...' ref={searchText} />
-          <SearchButton type='submit'>
+          <SearchButton type='submit' aria-label='button to start the search'>
             <FaSearch size={32} />
           </SearchButton>
         </SearchInner>

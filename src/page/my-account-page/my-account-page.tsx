@@ -5,7 +5,7 @@ import Sidebar from '../../components/sidebar/sidebar';
 import { SideLayout, SideMain } from './my-account-page.styles';
 import { logoPic } from '../../assets/logo';
 
-function MyAccountPage({children}: PropsWithChildren): JSX.Element {
+function MyAccountPage(): JSX.Element {
   return (
     <>
       <Header />
