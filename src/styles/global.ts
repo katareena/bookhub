@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { ThemeType } from '../types/theme-type';
+import { bp } from '../styles/variables';
 
 export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
   *,
@@ -18,6 +19,10 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
     font-size: 1.6rem;
     line-height: 1.7;
     letter-spacing: 0.6px;
+
+    @media (${bp.sm}) {
+      font-size: 1.3rem;
+  }
   }
   input {
     -webkit-border-radius: 0; // removing the rounding on input (iOS)

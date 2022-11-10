@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { v } from '../../styles/variables';
 
 export const NotFoundBox = styled.div`
   margin: 25px 40px;
@@ -15,7 +14,7 @@ export const NotFoundLink = styled(Link)`
   color: ${({theme}) => theme.primary};
   display: flex;
   width: max-content;
-  padding: calc(${v.smSpacing} - 2px) 0;
+  padding: 10px 0;
 
   &:hover,
   &:focus {

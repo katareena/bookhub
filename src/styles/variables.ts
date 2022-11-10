@@ -1,11 +1,9 @@
 import { css } from 'styled-components';
 
-export const v = {
-  smSpacing: `8px`,
-  mdSpacing: `16px`,
-  lgSpacing: `32px`,
-  xlSpacing: `48px`,
-  xxlSpacing: `64px`,
+export const boxes = {
+  lgSpacing: `4.5rem`,
+  mdSpacing: `3.5rem`,
+  smSpacing: `2.5rem`,
 };
 
 export const form = {
@@ -16,7 +14,7 @@ export const form = {
   xlSpacing: `48px`,
   xxlSpacing: `64px`,
   borderRadius: '4px',
-  boxShadow: `0 1px 1px rgba(0,0,0,0.15), 0 2px 2px rgba(0,0,0,0.15)`,
+  boxShadow: `0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15)`,
 };
 
 export const sideBar = {
@@ -41,34 +39,16 @@ export const btnReset = css`
   padding: 0;
 `;
 
-export const s = {
-  // 1460px = 91.25em
-  xxl: '91.25em',
-  // 1200px = 75em
-  xl: '75em',
-  // 1024px = 64em
-  lg: '64em',
-  // 768px = 48em
-  md: '48em',
-  // 600px = 37.5em
-  sm: '37.5em',
+export const size = {
+  lg: '64em', // 1024px = 64em
+  md: '48em', // 768px = 48em
+  sm: '36em' // 576px = 36em
 };
 
-export const sLookup = {
-  // 1024px = 64em
-  lg: 1024,
-  // 768px = 48em
-  md: 768,
-  // 600px = 37.5em
-  sm: 600,
-};
-
-export const b = {
-  xxl: `(min-width: ${s.xxl})`,
-  xl: `(min-width: ${s.xl})`,
-  lg: `(min-width: ${s.lg})`,
-  md: `(min-width: ${s.md})`,
-  sm: `(min-width: ${s.sm})`,
+export const bp = {
+  lg: `(max-width: ${size.lg})`,
+  md: `(max-width: ${size.md})`,
+  sm: `(max-width: ${size.sm})`,
 };
 
 export const stable = {

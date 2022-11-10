@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import backgroundPic from '../../assets/background.jpg';
-import { stable } from '../../styles/variables';
+import { stable, boxes } from '../../styles/variables';
 
 export const SearchContainer = styled.div`
   width: 100%;
   min-height: 75vh;
   background: url(${backgroundPic}) center/cover no-repeat;
   background-color: ${stable.bg1};
+  padding: 0 ${boxes.lgSpacing};
 
   display:  flex;
   flex-direction: column;
@@ -14,8 +15,6 @@ export const SearchContainer = styled.div`
 
   text-align: center;
   color: rgb(247, 247, 247);
-  z-index: 2;
-  position: relative;
 `;
 
 export const SearchBoxTitle = styled.h2`

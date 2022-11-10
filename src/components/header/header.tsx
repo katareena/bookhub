@@ -17,14 +17,12 @@ function Header(): JSX.Element {
             <span>bookhub</span>
           </Logo>
 
-          <BurgerButton type='button' onClick={handleNavbar}>
-            <HiOutlineMenuAlt3 size = {35} style = {{
-                color: `${toggleMenu ? '#fff' : '#010101'}`
-              }} />
+          <BurgerButton type='button' isToggleMenu={toggleMenu} onClick={handleNavbar}>
+            <HiOutlineMenuAlt3 size={35} />
           </BurgerButton>
         </HeaderBox>
 
-        <NavBox className={toggleMenu ? 'navbar-collapse show-navbar-collapse' : 'navbar-collapse'}>
+        <NavBox isToggleMenu={toggleMenu}>
           <NavList>
             <NavItem>
               <NavItemLink to={AppRoute.About}>About</NavItemLink>
