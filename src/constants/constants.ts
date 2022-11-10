@@ -3,7 +3,7 @@ export const TIMEOUT_SHOW_ERROR = 5000;
 export enum AppRoute {
   Root = '/',
   Books = 'books',
-  About = 'about',
+  About = '/about',
   Account = '/account',
   Favorites = '/account/favorite',
   SignIn = '/signin',

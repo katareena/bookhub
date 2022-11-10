@@ -9,6 +9,7 @@ import { GlobalStyle } from '../../styles/global';
 import { ThemeContextType } from '../../types/theme-context-type';
 import PrivateRoute from '../private-route/private-route';
 import HomePage from '../../page/home-page/home-page';
+import AboutPage from '../../page/about-page/about-page';
 import SignInPage from '../../page/sign-in-page/sign-in-page';
 import RegisterPage from '../../page/register-page/register-page';
 import MyAccountPage from '../../page/my-account-page/my-account-page';
@@ -43,7 +44,7 @@ function App({signInForm, registerForm}: AppProps): JSX.Element {
               <Route path={`${AppRoute.Books}/:id`} element = {<BookDetails />} /> */}
             </Route>
 
-            {/* <Route path={AppRoute.About} element = {<About />} /> */}
+            <Route path={AppRoute.About} element = {<AboutPage />} />
 
             <Route
               path={AppRoute.Account}

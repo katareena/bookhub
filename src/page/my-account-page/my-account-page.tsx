@@ -3,13 +3,11 @@ import { Outlet } from 'react-router-dom';
 import Header from '../../components/header/header';
 import Sidebar from '../../components/sidebar/sidebar';
 import { SideLayout, SideMain } from './my-account-page.styles';
-import { logoPic } from '../../assets/logo';
 
 function MyAccountPage(): JSX.Element {
   return (
     <>
       <Header />
-
       <SideLayout>
         <Sidebar />
         <SideMain>
