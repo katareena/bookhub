@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import backgroundPic from '../../assets/background.jpg';
-import { stable, boxes } from '../../styles/variables';
+import { stable, boxes, bp } from '../../styles/variables';
 
 export const SearchContainer = styled.div`
   width: 100%;
@@ -15,11 +15,23 @@ export const SearchContainer = styled.div`
 
   text-align: center;
   color: rgb(247, 247, 247);
+
+  @media (${bp.md}) {
+    padding: 0 ${boxes.mdSpacing};
+  }
+
+  @media (${bp.sm}) {
+    padding: 0 ${boxes.smSpacing};
+  }
 `;
 
 export const SearchBoxTitle = styled.h2`
   font-size: 4.2rem;
   text-transform: capitalize;
+
+  @media (${bp.md}) {
+    line-height: 1.5;
+  }
 `;
 
 export const SearchBoxText = styled.p`

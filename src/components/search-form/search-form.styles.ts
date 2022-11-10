@@ -1,10 +1,10 @@
 import styled from 'styled-components';
+import { bp } from '../../styles/variables';
 
 export const SearchContainer = styled.div`
   width: 100%;
   max-width: 680px;
   margin: 0 auto;
-  padding: 0 2rem;
 `;
 
 export const SearchFormBox = styled.form`
@@ -22,11 +22,18 @@ export const SearchInner = styled.div`
 `;
 
 export const SearchInput = styled.input`
+  width: 100%;
   border: none;
   font-family: inherit;
   font-size: 2rem;
   padding: 0.6rem;
   outline: 0;
+
+  @media (${bp.sm}) {
+    min-width: 165px;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
 `;
 
 export const SearchButton = styled.button`
@@ -35,5 +42,11 @@ export const SearchButton = styled.button`
     color: ${({theme}) => theme.hover};
     outline: none;
     transition: all 0.2s ease;
+  }
+
+  @media (${bp.sm}) {
+    & svg {
+      margin-left: -10px;
+    }
   }
 `;
