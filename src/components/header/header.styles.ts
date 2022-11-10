@@ -94,7 +94,7 @@ export const NavBox = styled.nav<{isToggleMenu: boolean}>`
     top: 0;
     z-index: 10;
 
-    transform: ${({isToggleMenu}) => isToggleMenu ? `translatex(0)` : `translatex(100%)`};;
+    transform: ${({isToggleMenu}) => isToggleMenu ? `translatex(0)` : `translatex(105%)`};;
     transition: all 300ms ease-in-out;
   }
 `;

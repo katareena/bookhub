@@ -1,17 +1,29 @@
 import styled from 'styled-components';
 import aboutPic from '../../assets/about-img.jpg';
-import { bp } from '../../styles/variables';
+import { boxes, bp } from '../../styles/variables';
 
 export const AboutSection = styled.section`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 2.5rem;
+  padding: 3rem ${boxes.lgSpacing};
+
+  @media (${bp.md}) {
+    padding: 0 ${boxes.mdSpacing};
+  }
+
+  @media (${bp.sm}) {
+    padding: 0 ${boxes.smSpacing};
+  }
 `;
 
 export const TitlePage = styled.h2`
   font-weight: 600;
   text-transform: uppercase;
   padding: 18px 0 24px 0;
+
+  @media (${bp.md}) {
+    padding: 18px 0 18px 0;
+  }
 `;
 
 export const AboutBox = styled.div`
@@ -21,6 +33,7 @@ export const AboutBox = styled.div`
 
   @media (${bp.md}) {
     grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
   }
 `;
 
@@ -58,5 +71,9 @@ export const TextParagraph = styled.p`
     font-weight: 300;
     letter-spacing: 0.8px;
     line-height: 1.6;
+
+    &:not(:last-child) {
+      margin: 1.3rem 0;
+    }
   }
 `;
