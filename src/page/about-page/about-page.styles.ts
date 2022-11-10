@@ -61,6 +61,7 @@ export const TitleBox = styled.h3`
 
 export const TextParagraph = styled.p`
   font-size: 1.7rem;
+  text-align: justify;
 
   &:not(:last-child) {
     margin: 1.8rem 0;
